@@ -33,4 +33,21 @@ feature 'CRUD company mascots' do
     expect(page).to_not have_content 'Frontier'
     expect(page).to_not have_content 'Fox'
   end
+
+  scenario 'User can delte a mascot' do
+    visit '/'
+    expect(page).to have_content 'Welcome'
+    click_on 'Add a mascot'
+    fill_in 'Company', with: 'Frontier'
+    fill_in 'Company mascot', with: 'Fox'
+    click_on 'Add mascot'
+    expect(page).to have_content 'Frontier'
+    expect(page).to have_content 'Fox'
+    click_on 'Frontier'
+    expect(page).to have_content 'Frontier'
+    expect(page).to have_content 'Fox'
+    click_on 'Delete'
+    expect(page).to_not have_content 'Frontier'
+    expect(page).to_not have_content 'Fox'
+  end
 end

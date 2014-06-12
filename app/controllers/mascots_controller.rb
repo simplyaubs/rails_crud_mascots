@@ -30,6 +30,12 @@ class MascotsController < ApplicationController
     redirect_to mascots_path
   end
 
+  def destroy
+    @mascot = Mascot.find(params[:id]).delete
+
+    redirect_to mascots_path
+  end
+
   private
   def mascot_params
     params.require(:mascot).permit(:company, :company_mascot)
