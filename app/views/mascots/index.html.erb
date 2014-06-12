@@ -15,7 +15,7 @@
 <%= @mascots.each do |mascot| %>
 <ul>
   <li>
-    <%= mascot.company %>, <%= mascot.company_mascot %>
+    <%= link_to "#{mascot.company}", mascot_path(mascot) %>, <%= mascot.company_mascot %>
   </li>
 </ul>
 <% end %>

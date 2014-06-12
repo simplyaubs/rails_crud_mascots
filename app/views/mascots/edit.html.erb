@@ -1,0 +1,13 @@
+<%= form_for @mascot do |f| %>
+  <p>
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+  </p>
+  <p>
+    <%= f.label :company_mascot %>
+    <%= f.text_field :company_mascot %>
+  </p>
+  <p>
+    <%= f.submit 'Update mascot' %>
+  </p>
+<% end %>
